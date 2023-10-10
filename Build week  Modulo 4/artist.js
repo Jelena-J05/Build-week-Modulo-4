@@ -5,9 +5,12 @@ const ApiArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 
 
 async function loadArtist() {
-    const a = await fetch(ApiArtist + artId)
+    const a = await fetch(ApiArtist + "59") //sostituire il "59" con artId
     const artist = await a.json()
     return artist
 }
 
-console.log(loadArtist)
+window.onload = async function(){
+    const artistX= await loadArtist()
+    console.log(artistX.name)
+} 
