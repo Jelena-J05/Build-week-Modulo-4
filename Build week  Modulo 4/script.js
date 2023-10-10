@@ -12,7 +12,7 @@ async function search(query) {
 }
 
 async function load() {
-    const research = "queen" 
+    const research = "eminem" 
     const allData = await search(research)
     console.log(allData)
     // riga.innerHTML = allData.map((dato) => {
