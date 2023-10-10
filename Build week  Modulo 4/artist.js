@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const artId = params.get("artistId")
 
 const ApiArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
-
+//API per cercare l'artista selezionato
 
 async function loadArtist() {
     const a = await fetch(ApiArtist + "59") //sostituire il "59" con artId
