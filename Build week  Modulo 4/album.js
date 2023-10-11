@@ -54,21 +54,21 @@ window.onload = async function () {
         sectionTracklistRef.innerHTML = /*html*/`
             <div class="container">
                 <div class="row text-muted border-bottom">
-                    <div class="col-6 mb-2"> # TITOLO </div>
-                    <div class="col-3 mb-2"> RIPRODUZIONI </div>
+                    <div class="col-6 mb-2 d-flex justify-content-start "> # TITOLO </div>
+                    <div class="col-3 mb-2  d-flex justify-content-end"> RIPRODUZIONI </div>
                     <div class="col-3 mb-2 d-flex justify-content-end"> <i class="bi bi-clock"></i> 
                     </div>
                 </div>
             </div>
             <div>
-            <ol class="text-dark list-group list-group-numbered">
+            <ol class="text-dark list-group list-group-numbered pe-2">
                 ${data.tracks.data.map(song => /*html*/`
                     <li class="text-dark align-items-center d-flex flex-row list-group-item border border-0">
                     <div class="col-6 d-flex flex-column justify-content-start ms-2">
                     ${song.title} 
                     <span class="text-muted">${data.artist.name}</span>
                     </div>
-                    <div class="col-3 d-flex justify-content-start"> </div>
+                    <div class="col-3 d-flex justify-content-end"> Riproduzioni </div>
                     <div class="col-3 d-flex justify-content-end">${timeStampFromDuration(song.duration)}</div>
                     </li>
                 `).join('')}
