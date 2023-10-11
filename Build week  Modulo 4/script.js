@@ -1,8 +1,8 @@
 const API = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 // API per la ricerca dati
-const ApiAlbum="https://striveschool-api.herokuapp.com/api/deezer/album/"
+const ApiAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 
-// const riga = document.querySelector('#cont')
+const riga = document.querySelector('#cont')
 
 //fx per il caricamento dati
 async function search(query) {
@@ -12,14 +12,28 @@ async function search(query) {
 }
 
 async function load() {
-    const research = "eminem" 
+    const research = "queen"
     const allData = await search(research)
-    console.log(allData)
-    // riga.innerHTML = allData.map((dato) => {
-    //     return /*html*/`
-    //             <div class="col-6 p-1">
-    //                 <img src="${dato.album.cover}" class="w-100 mt-1 object-fit-cover" alt="">
-    //             </div>`
-    // }).join("")
-}
-load()
+    // console.log(allData.data[0].id)
+
+    riga.innerHTML += allData.data.map((dato) => 
+        /*html*/ `
+        
+        <div class="col-4 mt-2">
+        <div class="card">
+            <img src="${dato.artist.picture}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${dato.artist.name}</h5>
+                <a href="#" class="">Titolo ${dato.title_short}</a>
+                <a href="#" class="">Album ${dato.album.title}</a>
+                </div>
+            </div> 
+        </div> 
+                   
+    `).join("")
+    }
+
+
+
+
+window.onload=load()
