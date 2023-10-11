@@ -20,7 +20,7 @@ async function loadAlbumData() {
 const albumTitleRef = document.querySelector('#album-title');
 const sectionCoverRef = document.querySelector('section#cover');
 const sectionTracklistRef = document.querySelector('section#tracklist');
-const sectionBackground=document.querySelector('#backgound-album');
+const sectionBackground=document.querySelector('#background-album');
 
 window.onload = async function () {
     const data = await loadAlbumData();
@@ -28,19 +28,23 @@ window.onload = async function () {
     if (data) {
 
         albumTitleRef.innerHTML = data.title;
-        sectionBackground.innerHTML=`
-        <img class="img-fluid" src="${data.cover_big}" alt="${data.artist.name}"/>
+        sectionBackground.innerHTML= /*html*/`
+        <img class="img-fluid" src="${data.cover}" alt="${data.artist.name}">
         `;
-        sectionCoverRef.innerHTML = /*html*/`
-            <img class="img-fluid" src="${data.cover_small}" alt="${data.title}">
-        `;
+        // sectionCoverRef.innerHTML = /*html*/`
+        //     <img class="img-fluid" src="${data.cover_small}" alt="${data.title}">
+        // `;
 
         sectionTracklistRef.innerHTML = /*html*/`
-            <ul>
+            <ol class="text-dark w-100">
                 ${data.tracks.data.map(song => /*html*/`
-                    <li class="text-dark">${song.title} ${timeStampFromDuration(song.duration)}</li>
+                    <li class="text-dark d-flex justify-content-between align-items-center">
+                    <img class="img-fluid" src="${data.cover_small}" alt="${data.title}">
+                    <span>${song.title} </span>
+                    <span>${timeStampFromDuration(song.duration)}</span>
+                    </li>
                 `).join('')}
-            </ul>
+            </ol>
         `;
     }
 };

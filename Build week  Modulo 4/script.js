@@ -24,8 +24,8 @@ async function load() {
             <img src="${dato.artist.picture}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${dato.artist.name}</h5>
-                <a href="#" class="">Titolo ${dato.title_short}</a>
-                <a href="#" class="">Album ${dato.album.title}</a>
+                <a href="pagina-artist.html?artId=${dato.artist.id}" class=""><p class="text-truncate">Titolo: ${dato.title_short}</p></a>
+                <a href="pagina-album.html?id=${dato.album.id}" class=""><p class="text-truncate">Album: ${dato.album.title}</p></a>
                 </div>
             </div> 
         </div> 
