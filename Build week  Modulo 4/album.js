@@ -7,6 +7,7 @@ function timeStampFromDuration(duration) {
     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
+
 async function loadAlbumData() {
     try {
         const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`);
@@ -21,10 +22,20 @@ const albumTitleRef = document.querySelector('#album-title');
 const sectionTracklistRef = document.querySelector('#tracklist');
 const sectionBackground = document.querySelector('#background-album');
 
+function formatDuration(durationInSeconds) {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    return `${minutes} min ${seconds} sec`;
+}
+
 window.onload = async function () {
     const data = await loadAlbumData();
 
     if (data) {
+        const releaseDate = new Date(data.release_date);
+        const releaseYear = releaseDate.getFullYear();
+        const formattedDuration = formatDuration(data.duration);
+
         sectionBackground.innerHTML = /*html*/`
     <div class="d-flex flex-row my-4 ms-4">
         <img class="img-fluid" src="${data.cover_medium}" alt="${data.artist.name}" style="width:200px; height:200px">
@@ -35,15 +46,15 @@ window.onload = async function () {
             <img src="${data.artist.picture_small}" class="rounded-circle artist-photo"alt="Immagine dell'artista" style="width:40px; height:40px">
             <span>${data.artist.name}</span>
             <span> • <span>
-            <span> Anno </span>
+            <span> ${releaseYear}</span>
             <span> • <span>
-            <span> x Brani </span>
-            <span class="text-muted"> Durata. </span>
+            <span> ${data.nb_tracks} brani, </ </span>
+            <span class="text-dark-50 fw-normal">${formattedDuration}. </span>
             </div>
         </div>
     </div>
 `;
-        //inserire l'anno dell'album e la durata dell'album
+    
         // sectionCoverRef.innerHTML = /*html*/`
         //     <img class="img-fluid" src="${data.cover_small}" alt="${data.title}">
         // `;
@@ -51,7 +62,7 @@ window.onload = async function () {
         sectionTracklistRef.innerHTML = /*html*/`
             <div class="container background-section">
                 <div class="row text-white-50 border-style mb-2">
-                    <div class="col-6  mb-2 d-flex justify-content-start "> # TITOLO </div>
+                    <div class="col-6  mb-2 d-flex justify-content-start"> # TITOLO </div>
                     <div class="col-3 mb-2  d-flex justify-content-center"> RIPRODUZIONI </div>
                     <div class="col-3 mb-2 d-flex justify-content-end"> <i class="bi bi-clock me-4"></i> </div>
                 </div>
