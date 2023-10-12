@@ -19,7 +19,7 @@ async function load() {
     riga.innerHTML += allData.data.map((dato) => 
         /*html*/ `
         
-        <div class="col-4 mt-2">
+        <div class="col-4 mx-2">
         <div class="card">
             <img src="${dato.artist.picture}" class="card-img-top" alt="...">
             <div class="card-body">
