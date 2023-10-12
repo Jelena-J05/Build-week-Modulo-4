@@ -52,19 +52,22 @@ window.onload = async function () {
             <div class="container background-section">
                 <div class="row text-white-50 border-style mb-2">
                     <div class="col-6  mb-2 d-flex justify-content-start "> # TITOLO </div>
-                    <div class="col-3 mb-2  d-flex justify-content-end"> RIPRODUZIONI </div>
+                    <div class="col-3 mb-2  d-flex justify-content-center"> RIPRODUZIONI </div>
                     <div class="col-3 mb-2 d-flex justify-content-end"> <i class="bi bi-clock me-4"></i> </div>
                 </div>
             <div>
             <ol class="list-group list-group-numbered p-0 w-100">
                 ${data.tracks.data.map(song => /*html*/`
                     <li class="text-white align-items-center d-flex flex-row list-group-item list-group-hover border border-0">
-                    <div class="col-6 d-flex flex-column justify-content-start ms-2">
-                    ${song.title} 
-                    <span class="text-white-50">${data.artist.name}</span>
-                    </div>
-                    <div class="col-3 d-flex justify-content-end text-white-50"> Riproduzioni </div>
-                    <div class="col-3 d-flex justify-content-end text-white-50 pe-4">${timeStampFromDuration(song.duration)}</div>
+                        <div class="col-6 d-flex flex-column justify-content-start ms-3">
+                         ${song.title} 
+                        <div>
+                            <img src="${data.artist.picture_small}" class="rounded-circle artist-photo"alt="Immagine dell'artista" style="width:20px; height:20px">
+                            <span class="text-white-50">${data.artist.name}</span>
+                        </div>
+                        </div>
+                    <div class="col-3 d-flex justify-content-center text-white-50 pe-0"> ${song.rank.toLocaleString()}</div>
+                    <div class="col-3 d-flex justify-content-end text-white-50 pe-4 mx-0">${timeStampFromDuration(song.duration)}</div>
                     </li>
                 `).join('')}
             </ol>
