@@ -18,16 +18,13 @@ async function loadAlbumData() {
 }
 
 const albumTitleRef = document.querySelector('#album-title');
-const sectionCoverRef = document.querySelector('section#cover');
-const sectionTracklistRef = document.querySelector('section#tracklist');
+const sectionTracklistRef = document.querySelector('#tracklist');
 const sectionBackground = document.querySelector('#background-album');
 
 window.onload = async function () {
     const data = await loadAlbumData();
 
     if (data) {
-
-
         sectionBackground.innerHTML = /*html*/`
     <div class="d-flex flex-row my-4 ms-4">
         <img class="img-fluid" src="${data.cover_medium}" alt="${data.artist.name}" style="width:200px; height:200px">
@@ -52,31 +49,31 @@ window.onload = async function () {
         // `;
 
         sectionTracklistRef.innerHTML = /*html*/`
-            <div class="container">
-                <div class="row text-muted border-bottom">
-                    <div class="col-6 mb-2 d-flex justify-content-start "> # TITOLO </div>
+            <div class="container background-section">
+                <div class="row text-white-50 border-style mb-2">
+                    <div class="col-6  mb-2 d-flex justify-content-start "> # TITOLO </div>
                     <div class="col-3 mb-2  d-flex justify-content-end"> RIPRODUZIONI </div>
-                    <div class="col-3 mb-2 d-flex justify-content-end"> <i class="bi bi-clock"></i> 
-                    </div>
+                    <div class="col-3 mb-2 d-flex justify-content-end"> <i class="bi bi-clock me-4"></i> </div>
                 </div>
-            </div>
             <div>
-            <ol class="text-dark list-group list-group-numbered pe-2">
+            <ol class="list-group list-group-numbered p-0 w-100">
                 ${data.tracks.data.map(song => /*html*/`
-                    <li class="text-dark align-items-center d-flex flex-row list-group-item border border-0">
+                    <li class="text-white align-items-center d-flex flex-row list-group-item list-group-hover border border-0">
                     <div class="col-6 d-flex flex-column justify-content-start ms-2">
                     ${song.title} 
-                    <span class="text-muted">${data.artist.name}</span>
+                    <span class="text-white-50">${data.artist.name}</span>
                     </div>
-                    <div class="col-3 d-flex justify-content-end"> Riproduzioni </div>
-                    <div class="col-3 d-flex justify-content-end">${timeStampFromDuration(song.duration)}</div>
+                    <div class="col-3 d-flex justify-content-end text-white-50"> Riproduzioni </div>
+                    <div class="col-3 d-flex justify-content-end text-white-50 pe-4">${timeStampFromDuration(song.duration)}</div>
                     </li>
                 `).join('')}
             </ol>
+            </div>
             
         `;
     }
 };
+
 
 
 // <img class="img-fluid" src="${data.cover_small}" alt="${data.title}"> 
