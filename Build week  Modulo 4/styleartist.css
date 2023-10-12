@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    padding: 10px;
+    margin: 1px;
+}
+
+.logo{
+    padding: 10px;
+    margin: 1px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+}
+
+li a{
+    color: white;
+}
+
+::-webkit-scrollbar {
+    height: 1px;
+    width: 1px;
+    background-color: black;
+  }

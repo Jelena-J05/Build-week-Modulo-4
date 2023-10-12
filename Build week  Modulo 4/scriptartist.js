@@ -2,6 +2,9 @@ const API = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 // API per la ricerca dati
 const ApiAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 
+
+
+
 const riga = document.querySelector('#cont')
 
 //fx per il caricamento dati
@@ -11,8 +14,8 @@ async function search(query) {
     return data
 }
 
-async function load() {
-    const research = "queen"
+async function load(parametro) {
+    const research = parametro
     const allData = await search(research)
     // console.log(allData.data[0].id)
 
@@ -36,4 +39,4 @@ async function load() {
 
 
 
-window.onload=load()
+window.onload=load("eminem")
