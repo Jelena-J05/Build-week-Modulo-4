@@ -1,0 +1,11 @@
+.bg-colorAllCol {
+    background-color: #121212;
+  }
+  
+  *{
+      font-family: sans-serif;
+  }
+   #formSearch{
+      display: none;
+  
+  }
