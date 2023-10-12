@@ -5,21 +5,24 @@ function showSearchField() {
     document.querySelector("#formSearch").style.display = "block";
   }
 }
+
 const searchField = document.querySelector("#btn");
 const resultContainer = document.querySelector("#showResearch");
 let url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let elmSearch = document.querySelector("#colFormLabelSm").value;
 
-function search(query) {
+function search() {
   if (localStorage.getItem("recentSearches") === null) {
     localStorage.setItem("recentSearches", JSON.stringify([]));
   }
 
+  const search1 = document.querySelector("#colFormLabelSm").value;
   const recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
+  recentSearches.push(search1)
   localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
   displayRecentSearches();
   const url =
-  `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query} `;
+    `https://striveschool-api.herokuapp.com/api/deezer/search?q=` + search;
 
   fetch(url)
     .then((r) => r.json())
@@ -47,16 +50,16 @@ function search(query) {
 }
 
 function displayRecentSearches() {
-    const recentsearchesContainer = document.querySelector("#recentSearch")
-    const recentSearches = JSON.parse(localStorage.getItem("recentSearchs"))
+  const recentsearchesContainer = document.querySelector("#recentSearch");
+  const recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
 
-    recentsearchesContainer.innerHTML = recentSearches.map(
-        query =>
-       /*html*/`
-       <li class="text-white" >${query}</li>
+  recentsearchesContainer.innerHTML = recentSearches
+    .map(
+      (searchValue) => /*html*/ `
+       <li class="text-white" >${searchValue}</li>
        `
-        ).join("")
+    )
+    .join("");
 }
 
-// search("muse")
-displayRecentSearches()
+displayRecentSearches();

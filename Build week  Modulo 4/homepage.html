@@ -27,10 +27,11 @@
                     </div>
                     <div class="d-flex align-items-center ms-2" tabindex="1">
                         <span class="text-decoration-none cerca ">
+                            <div>
+                                <input type="radio" value="show" onclick="showSearchField()">
 
-                            <input type="radio" value="show" onclick="showSearchField()">
-                            <span class="text-white fw-bold p-2">Cerca</span>
-                            </a>
+                                <span class="text-white fw-bold p-2">Cerca</span>
+                            </div>
                         </span>
 
                     </div>
@@ -50,11 +51,13 @@
                                 <path fill-rule="evenodd"
                                     d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
                             </svg></span>
-                            <div class="d-flex align-items-center" id="recentSearch">
 
-                            </div>
                     </div>
+                    <div class="d-flex flex-column" id="recentSearch">
+
                 </div>
+                </div>
+                
             </div>
             <div class="col-8 bg-colorAllCol">
                 <div class="container">
@@ -92,7 +95,7 @@
                     </div>
                 </div>
 
-                <div class="row" >
+                <div class="row">
                     <div class="" id="showResearch">
 
                     </div>
