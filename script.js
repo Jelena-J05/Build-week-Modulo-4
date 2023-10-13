@@ -1,3 +1,58 @@
+const API = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
+
+function nRandom() {  //numero a caso tra 1 e 50
+  return Math.floor(Math.random() * 100)
+}
+
+async function artistaCasuale() { //artista a caso tra 1 e 50
+  const a = await fetch(API + nRandom())
+  const artistaX = a.json()
+  return artistaX
+}
+
+async function salva12ArtistiCasuali() {
+  const artistiX = []
+  for (i = 0; i < 12; i++) {
+    try {
+      artistiX.push(await artistaCasuale())
+    }
+    catch {
+      console.log("Errore")
+      i--
+    }
+  }
+  console.log(artistiX)
+  return artistiX
+}
+
+function displayArtisti(array12Artisti) {
+  resultContainer.innerHTML = array12Artisti.map((artX) => /*html*/ `
+  <div class="px-2 col-3 m-1 bg-dark">
+  <a href="pagina-artista.html?id=${artX.id}">
+  <img class="w-100" src="${artX.picture}" alt="" />
+  </a>
+  <div>
+      <h6 class="mt-2 mb-0">${artX.title} </h6>
+      <p class="m-0 text-white-50">
+          <a href="pagina-artista.html?artistId=${artX.id}">
+              ${artX.name}
+          </a>
+      </p>
+  </div>
+</div>
+`)
+}
+
+async function caricaArtisti(){
+  const X12=await salva12ArtistiCasuali()
+  displayArtisti(X12)
+}
+
+window.onload = caricaArtisti()
+
+
+
+
 function showSearchField() {
   const radio = document.querySelector('input[type="radio"]');
 
@@ -8,6 +63,7 @@ function showSearchField() {
 
 const searchField = document.querySelector("#btn");
 const resultContainer = document.querySelector("#showResearch");
+
 let url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let elmSearch = document.querySelector("#colFormLabelSm").value;
 
@@ -56,7 +112,7 @@ function displayRecentSearches() {
   recentsearchesContainer.innerHTML = recentSearches
     .map(
       (searchValue) => /*html*/ `
-       <li class="text-white" >${searchValue}</li>
+       <a href="pagina-artista.html?artistId=${searchValue}"> <li class="text-white" >${searchValue}</li></a>
        `
     )
     .join("");
