@@ -39,3 +39,10 @@ li a{
     width: 1px;
     background-color: black;
   }
+
+  .play-button {
+    background-color: #1ED760;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
