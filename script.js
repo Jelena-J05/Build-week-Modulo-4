@@ -28,13 +28,13 @@ async function salva12ArtistiCasuali() {
 function displayArtisti(array12Artisti) {
   resultContainer.innerHTML = array12Artisti.map((artX) => /*html*/ `
   <div class="px-2 col-3 m-1 bg-dark">
-  <a href="pagina-artista.html?id=${artX.id}">
+  <a href="pagina-artista.html?artistId=${artX.id}">
   <img class="w-100" src="${artX.picture}" alt="" />
   </a>
   <div>
-      <h6 class="mt-2 mb-0">${artX.title} </h6>
+      <!--<h6 class="mt-2 mb-0">$artX.tracklist} </h6>-->
       <p class="m-0 text-white-50">
-          <a href="pagina-artista.html?artistId=${artX.id}">
+          <a href="pagina-artista.html?artistId=${artX.id}" style="text-decoration: none; color:white;">
               ${artX.name}
           </a>
       </p>
@@ -112,7 +112,7 @@ function displayRecentSearches() {
   recentsearchesContainer.innerHTML = recentSearches
     .map(
       (searchValue) => /*html*/ `
-       <a href="pagina-artista.html?artistId=${searchValue}"> <li class="text-white" >${searchValue}</li></a>
+       <a href="pagina-artista.html?artistId=${searchValue}" style="text-decoration: none;"> <li class="text-white" >${searchValue}</li></a>
        `
     )
     .join("");
