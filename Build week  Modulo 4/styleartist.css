@@ -46,3 +46,16 @@ li a{
     height: 50px;
     width: 50px;
 }
+
+footer {
+    background-color: #212529;
+    font-size: 14px;
+}
+
+i:hover {
+    transform: scale(1.1);
+}
+
+button:hover {
+    transform: scale(1.1);
+}

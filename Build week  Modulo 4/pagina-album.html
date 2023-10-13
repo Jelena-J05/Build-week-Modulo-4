@@ -65,9 +65,9 @@
     }
 
     footer {
-        background-color: #161619;
-        font-size: 14px;
-    }
+    background-color: #212529;
+    font-size: 14px;
+}
 
     i:hover {
         transform: scale(1.1);
@@ -86,116 +86,121 @@
 <body>
     <div class="contaniner-fluid bg-colorAllCol">
         <div class="row ">
-            <div class="col-4 cerca mt-2 p-0">
-                <div class="contaniner border border-0 bg-dark align-items-center border rounded mb-2 b ms-3">
-                    <div class="d-flex align-items-center ms-2">
-                        <span>
-                            <a href="homepage.html"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                    fill="white" class="bi bi-house-door" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
-                                </svg>
-                        </span>
-                        <span class="text-white fw-bold p-2">Home</span></a>
-                    </div>
-                    <div class="d-flex align-items-center ms-2" tabindex="1">
-                        <span class="text-decoration-none cerca ">
-                            <div>
-                                <input type="radio" value="show" onclick="showSearchField()">
-
-                                <span class="text-white fw-bold p-2">Cerca</span>
+            <div class="col-4 p-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex flex-column rounded bg-dark">
+                            <div class="logo ms-4">
+                                <img src="assets/Spotify-logo-white.png" width="80" height="45" alt="">
                             </div>
-                        </span>
-
-                    </div>
-                </div>
-                <div class="contaniner align-items-center border rounded bg-dark ms-3">
-                    <div class="d-flex align-items-center">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                class="bi bi-wallet2" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
-                            </svg>
-                        </span>
-                        <section>
-                            <span class="text-white fw-bold p-2">La tua libreria</span>
-                            <span class="d-flex justify-content-end"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                    height="20" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                                </svg></span>
-                    </div>
-                </div>
-                <footer class="container pb-5 pt-5 text-secondary rounded">
-                    <ol class="d-flex flex-row gap-2">
-                        <li> Informazioni legali </li>
-                        <li> Centro sulla privacy </li>
-                        <li> Informativa sulla privacy </li>
-                    </ol>
-                    <ol class="d-flex flex-row gap-2">
-                        <li> Informazioni cookie </li>
-                        <li> Info annunci </li>
-                        <li> Accessibilità </li>
-                    </ol>
-                    <ol class="d-flex flex-row gap-2">
-                        <li> Politica sui cookie </li>
-                    </ol>
-                    <div class="badge rounded-pill text-bg-dark fs-6 ms-4"> <i class="bi bi-globe"></i> Italiano</div>
-                </footer>
-            </div>
-            <div class="col-8 border border-secondary p-0">
-                <div class="container background-cover p-0">
-                    <div>
-                        <div class="d-flex pb-2 pt-2 ps-4">
-                            <button type="button" class="btn btn-dark  rounded-circle btn-sm me-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
-                                    class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-                                </svg>
-                            </button>
-                            <button type="button" class="btn btn-dark  rounded-circle btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
-                                    class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                </svg>
-                            </button>
+                            <div>
+                                <ul>
+                                    <li class="mt-2 fw-bold d-flex align-items-center">                                        
+                                        <a href="homepage.html" class="text-decoration-none text-white"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                            class="bi bi-house-door me-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
+                                        </svg>Home</a>
+                                    </li>
+                                    <li class="mt-2 fw-bold">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                            class="bi bi-search me-1" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg>
+                                        <a href="" class="text-decoration-none text-white">Cerca</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+                        <div class="col-12 d-flex flex-column justify-content-start rounded bg-dark mt-3">
+                                <ul>
+                                    <li class="text-white fw-bold list-unstyle-none text-decoration-none">
+                                    <ion-icon name="library-outline" class="text-white ms-1"></ion-icon>
+                                    La tua Libreria
+                                </li>
+                                <li class="mt-2 d-flex">
+                                    <span class="text-white fw-bold me-3">Aggiungi preferiti</span>
+                                    <a href="index.html"><i class="bi bi-plus text-decoration-none text-white"></i></a>
+                                </li>
+                                    <li id="preferList" class="mt-2">
+                                    </li>
+                                </ul>
+            
+                        </div>
+                        <footer class="container pb-5 pt-5 mt-3 text-secondary rounded">
+                            <ol class="d-flex flex-row gap-2">
+                                <li> Informazioni legali </li>
+                                <li> Centro sulla privacy </li>
+                                <li> Informativa sulla privacy </li>
+                            </ol>
+                            <ol class="d-flex flex-row gap-2">
+                                <li> Informazioni cookie </li>
+                                <li> Info annunci </li>
+                                <li> Accessibilità </li>
+                            </ol>
+                            <ol class="d-flex flex-row gap-2">
+                                <li> Politica sui cookie </li>
+                            </ol>
+                            <div class="badge rounded-pill text-bg-dark fs-6 ms-4 border border-white"> <i class="bi bi-globe"></i> Italiano</div>
+                        </footer>
                     </div>
-                    <div id="background-album"></div>
                 </div>
+            </div>
+                        <div class="col-8 border border-secondary p-0">
+                            <div class="container background-cover p-0">
+                                <div>
+                                    <div class="d-flex pb-2 pt-2 ps-4">
+                                        <button type="button" class="btn btn-dark  rounded-circle btn-sm me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                                class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn btn-dark  rounded-circle btn-sm">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                                class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="background-album"></div>
+                            </div>
 
-                <section class="background-section">
-                    <div class="d-flex align-items-center ms-4 mb-5 pt-4">
-                        <button class="border border-dark me-4 play-button"> <i
-                                class="bi bi-caret-right-fill fs-4"></i></button>
-                        <i class="bi bi-suit-heart me-4 fs-3 text-white"></i>
-                        <i class="bi bi-download me-4 fs-3 text-white"></i>
-                        <i class="bi bi-three-dots fs-3 text-white"></i>
-                    </div>
-                    <section class="container d-flex flex-column">
-                        <div class="row">
-                            <!-- <section id="cover" class="col-12 col-md-4">
+                            <section class="background-section">
+                                <div class="d-flex align-items-center ms-4 mb-5 pt-4">
+                                    <button class="border border-dark me-4 play-button"> <i
+                                            class="bi bi-caret-right-fill fs-4"></i></button>
+                                    <i class="bi bi-suit-heart me-4 fs-3 text-white"></i>
+                                    <i class="bi bi-download me-4 fs-3 text-white"></i>
+                                    <i class="bi bi-three-dots fs-3 text-white"></i>
+                                </div>
+                                <section class="container d-flex flex-column">
+                                    <div class="row">
+                                        <!-- <section id="cover" class="col-12 col-md-4">
                             Album cover
                         </section> -->
-                            <div id="tracklist" class="col-12 p-2">
-                                Album tracklist
-                            </div>
+                                        <div id="tracklist" class="col-12 p-2">
+                                            Album tracklist
+                                        </div>
+                                    </div>
+                                </section>
+                            </section>
+                            <footer class="container pb-5 pt-3 text-secondary">
+                                <hr>
+                                © 2023 Spotify AB
+                            </footer>
                         </div>
-                    </section>
-                </section>
-                <footer class="container pb-5 pt-3 text-secondary">
-                    <hr>
-                    © 2023 Spotify AB
-                </footer>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-        <script src="album.js"></script>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                        crossorigin="anonymous"></script>
+                    <script src="album.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                
 
 </body>
 

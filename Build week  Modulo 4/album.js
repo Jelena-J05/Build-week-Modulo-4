@@ -62,13 +62,10 @@ window.onload = async function () {
                     <div class="col-3 mb-2 d-flex justify-content-end"> <i class="bi bi-clock me-4"></i> </div>
                 </div>
             <div>
-            <ol class="list-group list-group-numbered p-0">
+            <ol class="list-group list-group-numbered ps-2 ms-2">
                 ${data.tracks.data.map(song => /*html*/`
                     <li class="text-white align-items-center d-flex flex-row list-group-item border border-0">
-                     <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-play-fill p-0" viewBox="0 0 16 16">
-                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                    </svg></span>
-                        <div class="col-6 d-flex flex-column justify-content-start">
+                        <div class="col-6 d-flex flex-column justify-content-start ms-3">
                          ${song.title} 
                         <div>
                             <img src="${data.artist.picture_small}" class="rounded-circle artist-photo"alt="Immagine dell'artista" style="width:20px; height:20px">
